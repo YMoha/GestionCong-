@@ -1,4 +1,4 @@
-package ma.omni.authenti_services.entities;
+package ma.omni.authenti_services.sec.entities;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -11,7 +11,7 @@ import javax.persistence.*;
 @Data @NoArgsConstructor @AllArgsConstructor
 public class Roles {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idRoles;
+    private Long idRoles    ;
     private String roleName;
 
 }

@@ -1,5 +1,6 @@
-package ma.omni.authenti_services.entities;
+package ma.omni.authenti_services.sec.entities;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -13,7 +14,8 @@ public class Employer {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String userName;
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private String password;
-    @ManyToMany
+    @ManyToMany(fetch = FetchType.LAZY)
     private Collection<Roles> roles;
 }
